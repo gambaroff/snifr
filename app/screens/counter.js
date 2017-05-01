@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
+import MapView from 'react-native-maps';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
-import styles from '../styles';
 import * as counterActions  from '../redux/modules/counter';
+import { StyleSheet } from 'react-native';
+
+
+const styles = StyleSheet.create({
+    container: {
+          ...StyleSheet.absoluteFillObject,
+          height: 400,
+          width: 400,
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+        },
+    map: {
+          ...StyleSheet.absoluteFillObject,
+        },
+});
 
 class Counter extends Component {
   static navigationOptions = {
-    title: 'Counter',
+    title: 'Map',
   };
 
   render() {
@@ -14,15 +29,16 @@ class Counter extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Counter: {value}</Text>
-        <View style={styles.buttons}>
-          <TouchableOpacity style={styles.button} onPress={decrement}>
-            <Text style={styles.text}>Decrement</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={increment}>
-            <Text style={styles.text}>Increment</Text>
-          </TouchableOpacity>
-        </View>
+        <Text>Map!</Text>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+        />
       </View>
     );
   }
