@@ -1,0 +1,65 @@
+PODS:
+  - React (0.43.4):
+    - React/Core (= 0.43.4)
+  - react-native-maps (0.14.0):
+    - React
+  - React/Core (0.43.4):
+    - React/cxxreact
+    - Yoga (= 0.43.4.React)
+  - React/cxxreact (0.43.4):
+    - React/jschelpers
+  - React/jschelpers (0.43.4)
+  - React/RCTActionSheet (0.43.4):
+    - React/Core
+  - React/RCTAnimation (0.43.4):
+    - React/Core
+  - React/RCTGeolocation (0.43.4):
+    - React/Core
+  - React/RCTImage (0.43.4):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTLinkingIOS (0.43.4):
+    - React/Core
+  - React/RCTNetwork (0.43.4):
+    - React/Core
+  - React/RCTSettings (0.43.4):
+    - React/Core
+  - React/RCTText (0.43.4):
+    - React/Core
+  - React/RCTVibration (0.43.4):
+    - React/Core
+  - React/RCTWebSocket (0.43.4):
+    - React/Core
+  - Yoga (0.43.4.React)
+
+DEPENDENCIES:
+  - react-native-maps (from `../node_modules/react-native-maps`)
+  - React/Core (from `../node_modules/react-native`)
+  - React/RCTActionSheet (from `../node_modules/react-native`)
+  - React/RCTAnimation (from `../node_modules/react-native`)
+  - React/RCTGeolocation (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTLinkingIOS (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTSettings (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTVibration (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+  - Yoga (from `../node_modules/react-native/ReactCommon/yoga/Yoga.podspec`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: ../node_modules/react-native
+  react-native-maps:
+    :path: ../node_modules/react-native-maps
+  Yoga:
+    :path: ../node_modules/react-native/ReactCommon/yoga/Yoga.podspec
+
+SPEC CHECKSUMS:
+  React: 607aa7eb8b0e44b102f95f43fd49dc8aedefa93f
+  react-native-maps: c0145d0e4c31e6ce48cbe124543a4331baecfc7b
+  Yoga: 2a70bc5ab41486a272b9fd5b76c482ba9268c5dd
+
+PODFILE CHECKSUM: e46a629b00cc0718d389e352d4af1c857f2c8012
+
+COCOAPODS: 1.2.1
