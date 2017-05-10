@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View, TextInput } from 'react-native';
 import styles from '../styles';
 
 class Welcome extends Component {
@@ -11,11 +11,20 @@ class Welcome extends Component {
     return (
       <View style={styles.container}>
         <Text style={[styles.welcome, styles.text]}>
-          Welcome to React Native!
+          Welcome to Snifr!
         </Text>
         <Text style={[styles.instructions, styles.text]}>
-          To get started, edit app/screens/welcome.js
+          Snifr is currently in BETA. To get started, enter your email:
         </Text>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Button
+          title="Learn More"
+          color="#841584"
+        />
+
         <Text style={[styles.instructions, styles.text]}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
@@ -26,3 +35,4 @@ class Welcome extends Component {
 };
 
 export default Welcome;
+

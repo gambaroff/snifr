@@ -25,27 +25,43 @@ class Counter extends Component {
   };
   constructor(props) {
     super(props);
-
+4
     this.state = {
-      latitude: null,
-      longitude: null,
-      error: null,
+      region: {
+        latitude: 0.0,
+        longitude: 0.0,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+        error: null,
+      }
     };
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        this.setState({
+        console.log(`####### snif component mount ${JSON.stringify(position)}`);
+        this.setState({ region: {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
           error: null,
+        }
         });
       },
       (error) => this.setState({ error: error.message }),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
   }
+
+  onRegionChange() {
+    (region) => {
+      console.log(`####### snif region change ${JSON.stringify(region)}`);
+      this.setState({ region });
+    }
+  };
+
 
   render() {
 
@@ -56,12 +72,8 @@ class Counter extends Component {
         {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
         <MapView
           style={styles.map}
-          initialRegion={{
-            latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
-            }}
+          region={this.state.region}
+          onRegionChange={this.onRegionChange}
         />
       </View>
     );
